@@ -20,10 +20,12 @@ const SingleProduct = () => {
   const [product, setProduct] = useState([]);
   const { id } = useParams();
   useEffect(() => {
-    fetch("/products.json")
+    fetch("../../../public/products.json")
       .then((res) => res.json())
       .then((data) => setProduct(data));
+      
   }, []);
+  
 
 
   const result = product.filter((p) => p.id === id);
@@ -90,8 +92,8 @@ const SingleProduct = () => {
             </div>
             <div className="col-lg-4 col-md-7 col-12">
               <aside className="ps-lg-4">
-                <MostPopularPost />
-                <Tags />
+                {/* <MostPopularPost /> */}
+                {/* <Tags /> */}
               </aside>
             </div>
           </div>

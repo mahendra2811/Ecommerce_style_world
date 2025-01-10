@@ -7,10 +7,10 @@ import ShopCategory from "./ShopCategory";
 import PopularPost from "./PopularPost";
 import Tags from "./Tags";
 import ProductCards from "./ProductCards";
+import Data from "../../../public/products.json"
+
+
 const showResult = "Showing 01 - 12 of 139 Results";
-import Data from  "../../utilis/products.json";
-
-
 const Shop = () => {
   const [GridList, setGridList] = useState(true);
   const [products, setProducts] = useState(Data);
@@ -97,8 +97,8 @@ const [selectedCategory, setSelectedCategory] = useState("All");
                   setProducts={setProducts}
                   selectedCategory={selectedCategory }
                 />
-                <PopularPost/>
-                <Tags />
+                {/* <PopularPost/> */}
+                {/* <Tags /> */}
               </aside>
             </div>
           </div>

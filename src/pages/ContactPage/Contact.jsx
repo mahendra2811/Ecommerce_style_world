@@ -7,32 +7,32 @@ const title = "We're Always Eager To Hear From You!";
 const conSubTitle = "Get in touch with Contact us";
 const conTitle =
   "Fill The Form Below So We Can Get To Know You And Your Needs Better.";
-const btnText = "Send our Message";
+const btnText = "Send us";
 
 const contactList = [
   {
     imgUrl: "/images/icon/01.png",
     imgAlt: "contact icon",
-    title: "Office Address",
-    desc: "",
+    title: "Store Address",
+    desc: "Boranda , jodhpur , rajasthan",
   },
   {
     imgUrl: "/images/icon/02.png",
     imgAlt: "contact icon",
     title: "Phone number",
-    desc: "+22698 745 632,02 982 745",
+    desc: "+91 8000476996 , +91 950835520 ",
   },
   {
     imgUrl: "/images/icon/03.png",
     imgAlt: "contact icon",
     title: "Send email",
-    desc: "admin@shopcart.com",
+    desc: "admin@gmail.com",
   },
   {
     imgUrl: "/images/icon/04.png",
     imgAlt: "contact icon",
     title: "Our website",
-    desc: "www.shopcart.com",
+    desc: "www.style-world.in",
   },
 ];
 
