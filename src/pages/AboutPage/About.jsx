@@ -1,8 +1,12 @@
 import React from 'react'
 import PageHeader from '../../components/PageHeader';
-const subTitle = "About Our Brand";
-const title = "Good Qualification Services And Better Expriences";
-const desc = "Distinctively provide acces mutfuncto users whereas transparent proceses somes ncentivize eficient functionalities rather than extensible archtectur communicate leveraged services and cross-platform.";
+const subTitle = "About Style world";
+const title = "Meet Our Founders – The Visionaries Behind Style World";
+const desc = "At Style World, the driving force behind our success is the dynamic partnership of Pream and Naveen Sou, whose unique blend of talents and vision have shaped our brand into a fashion destination for everyone.";
+const desc2 = " As the business strategist, Pream plays a pivotal role in planning and managing the backend operations of Style World. With his sharp acumen and a knack for executing effective strategies, he ensures that everything runs seamlessly behind the scenes. From sourcing high-quality products to overseeing logistics and operations, Pream’s contributions form the backbone of Style World's success.";
+const desc3 = "Naveen, on the other hand, is the energetic front face of Style World. A true youth icon, he has a natural flair for connecting with people and creating a buzz. Starting with innovative social media marketing campaigns, Naveen has brought Style World into the spotlight. His ability to engage audiences and keep the brand relatable and trendy has turned Style World into a recognizable name in the fashion industry.";
+const title2 = "Pream – The Strategic Mastermind";
+const title3 ="Naveen Sou – The Youth Icon and Front Face";
 
 const year = "30+";
 const expareance = "Years Of Experiences";
@@ -55,8 +59,12 @@ const About = () => {
                                     <span className="subtitle">{subTitle}</span>
                                     <h2 className="title">{title}</h2>
                                     <p>{desc}</p>
+                                    <h3>{title2}</h3>
+                                    <p>{desc2}</p>
+                                    <h3>{title3}</h3>
+                                    <p>{desc3}</p>  
                                 </div>
-                                <div className="section-wrapper">
+                                {/* <div className="section-wrapper">
                                     <ul className="lab-ul">
                                         {aboutList.map((val, i) => (
                                             <li key={i}>
@@ -70,7 +78,7 @@ const About = () => {
                                             </li>
                                         ))}
                                     </ul>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>

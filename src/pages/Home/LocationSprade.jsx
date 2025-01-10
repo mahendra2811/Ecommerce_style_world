@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 
 const title = (
   <h2 className="title">
-    More Then <span className="yellow-color">60,000</span> Customers
+    More Then <span className="yellow-color">4,00,000</span> Customers
   </h2>
 );
 const desc =
-  "Buy products on your any device with our app & enjoy your time what you want. Just download & install & start to shopping";
+  "Step into the world of style with our carefully curated collections for every age and every style. Redefine your wardrobe today!";
 
 const clientsList = [
   {
@@ -53,7 +53,7 @@ const LocationSprade = () => {
           {title}
           <p>{desc}</p>
         </div>
-        <div className="section-wrapper">
+        {/* <div className="section-wrapper">
           <div className="clients">
             {clientsList.map((val, i) => (
               <div className="client-list" key={i}>
@@ -61,14 +61,14 @@ const LocationSprade = () => {
                   <span>{val.text}</span>
                 </Link>
                 <div className="client-thumb">
-                  <Link target="blank" to="https://www.linkedin.com/in/rohitrai0/" >
+                  <Link target="blank" to="http://mahendrapuniya.online/" >
                     <img src={`${val.imgUrl}`} alt={`${val.imgAlt}`} />
                   </Link>
                 </div>
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

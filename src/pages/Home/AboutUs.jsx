@@ -2,26 +2,26 @@
 import CountUp from 'react-countup';
 import { Link } from "react-router-dom";
 
-const subTitle = "Why Choose Us";
-const title = "Become a Marchant";
-const desc = "Take courses on your any device with our app & learn all about business what you want. Just download & install & start to learn";
-const btnText = "Apply  Now";
+const subTitle = "Bring Style World to Your City!";
+const title = "Start Your Franchise";
+const desc = "Join the Style World family and become a part of our growing fashion brand! With a strong presence in Boranada, Jodhpur, and a loyal customer base, Style World offers you the perfect opportunity to start your own business in the fashion industry. By opening a franchise, you'll gain access to our proven business model, extensive product range, and ongoing support to help you succeed. Together, let's bring affordable, stylish clothing, shoes, and accessories to customers across India!";
+const btnText = "Contact Us";
 
 const countList = [
     {
         iconName: 'icofont-users-alt-4',
-        count: '12600',
-        text: 'Marchant Enrolled',
+        count: '934344',
+        text: 'Happy Customers',
     },
     {
         iconName: 'icofont-graduate-alt',
-        count: '30',
-        text: 'Certified Courses',
+        count: '7',
+        text: 'Years of Trusted Services',
     },
     {
         iconName: 'icofont-notification',
-        count: '100',
-        text: 'Rewards and GitCards',
+        count: '127',
+        text: 'Rewards For Best Services',
     },
 ]
 

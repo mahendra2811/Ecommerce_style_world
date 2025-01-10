@@ -14,7 +14,7 @@ const contactList = [
     imgUrl: "/images/icon/01.png",
     imgAlt: "contact icon",
     title: "Office Address",
-    desc: "1201 park street, Fifth Avenue",
+    desc: "",
   },
   {
     imgUrl: "/images/icon/02.png",

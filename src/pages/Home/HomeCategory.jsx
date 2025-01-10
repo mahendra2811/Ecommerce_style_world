@@ -1,9 +1,9 @@
 
 import { Link } from "react-router-dom";
 
-const subTitle = "Choose Any Products";
+const subTitle = "Your Favorite Trends Are Just a Click Away!";
 const title = "Buy Everything with Us";
-const btnText = "Get Started Now";
+const btnText = "Shop Now";
 
 
 const categoryList = [
@@ -11,38 +11,38 @@ const categoryList = [
         imgUrl: '/images/category//01.jpg',
         imgAlt: 'category rajibraj91 rajibraj',
         iconName: 'icofont-brand-windows',
-        title: 'DSLR Camera',
+        title: 'Shirt',
     },
     {
         imgUrl: 'images/category//02.jpg',
         imgAlt: 'category rajibraj91 rajibraj',
         iconName: 'icofont-brand-windows',
-        title: 'Shoes',
+        title: 'jeans',
     },
     {
         imgUrl: 'images/category//03.jpg',
         imgAlt: 'category rajibraj91 rajibraj',
         iconName: 'icofont-brand-windows',
-        title: 'Photography',
+        title: 'Shoes',
     },
-    {
-        imgUrl: 'images/category//04.jpg',
-        imgAlt: 'category rajibraj91 rajibraj',
-        iconName: 'icofont-brand-windows',
-        title: 'Formal Dress',
-    },
-    {
-        imgUrl: 'images/category//05.jpg',
-        imgAlt: 'category rajibraj91 rajibraj',
-        iconName: 'icofont-brand-windows',
-        title: 'Colorful Bags',
-    },
-    {
-        imgUrl: 'images/category//06.jpg',
-        imgAlt: 'category rajibraj91 rajibraj',
-        iconName: 'icofont-brand-windows',
-        title: 'Home Decor',
-    },
+    // {
+    //     imgUrl: 'images/category//04.jpg',
+    //     imgAlt: 'category rajibraj91 rajibraj',
+    //     iconName: 'icofont-brand-windows',
+    //     title: 'Formal Dress',
+    // },
+    // {
+    //     imgUrl: 'images/category//05.jpg',
+    //     imgAlt: 'category rajibraj91 rajibraj',
+    //     iconName: 'icofont-brand-windows',
+    //     title: 'Colorful Bags',
+    // },
+    // {
+    //     imgUrl: 'images/category//06.jpg',
+    //     imgAlt: 'category rajibraj91 rajibraj',
+    //     iconName: 'icofont-brand-windows',
+    //     title: 'Home Decor',
+    // },
 ]
 
 const HomeCategory = () => {

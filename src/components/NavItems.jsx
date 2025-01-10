@@ -74,9 +74,9 @@ const NavItems = () => {
                   <li>
                     <Link to="shop">Shop</Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link to="/blog">Blog</Link>
-                  </li>
+                  </li> */}
                   <li>
                     {" "}
                     <NavLink to="/about">About</NavLink>

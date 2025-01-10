@@ -6,10 +6,10 @@ import { Link } from "react-router-dom";
 
 const title = (
   <h2>
-    Search Your One From <span>Thousand</span> Of Products
+    From <span>Jodhpur</span> to Your Doorstep Quality You Can Trust! 
   </h2>
 );
-const desc = "We Have The Largest Collection of products";
+const desc = "Step Into Style – Clothing, Shoes, and Accessories for Everyone!";
 
 const bannerList = [
   {
