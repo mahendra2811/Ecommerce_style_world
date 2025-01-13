@@ -2,24 +2,24 @@
 
 import { Link } from "react-router-dom";
 
-const title = "About ShopCart";
-const desc = "Eduaid theme number one world class university in the world There are student are studing always in this university for all time.";
+const title = "About Style World";
+const desc = "Our shop is a modern e-commerce platform offering a wide range of high-quality products at competitive prices. With a user-friendly interface and secure checkout, shopping has never been easier. Experience seamless browsing, fast delivery, and exceptional customer service with every purchase!";
 const ItemTitle = "Categories";
 const quickTitle = "Quick Links";
-const tweetTitle = "Recent Tweets";
+const Conact = "Connect With us";
 
 const addressList = [
     {
         iconName: 'icofont-google-map',
-        text: 'New York, USA.',
+        text: 'Boranada , Jodhpur',
     },
     {
         iconName: 'icofont-phone',
-        text: '+880 123 456 789',
+        text: '+91 8000476996 , +91 950835520',
     },
     {
         iconName: 'icofont-envelope',
-        text: 'info@shopcart.com',
+        text: ' info@style-world.com',
     },
 ]
 
@@ -34,11 +34,11 @@ const socialList = [
         siteLink: '#',
         className: 'twitter',
     },
-    {
-        iconName: 'icofont-linkedin',
-        siteLink: '#',
-        className: 'linkedin',
-    },
+    // {
+    //     iconName: 'icofont-linkedin',
+    //     siteLink: '#',
+    //     className: 'linkedin',
+    // },
     {
         iconName: 'icofont-instagram',
         siteLink: '#',
@@ -60,10 +60,10 @@ const ItemList = [
         text: 'Shop',
         link: '/shop',
     },
-    {
-        text: 'Blog',
-        link: '/blog',
-    },
+    // {
+    //     text: 'Blog',
+    //     link: '/blog',
+    // },
     {
         text: 'About',
         link: '/about',
@@ -79,25 +79,18 @@ const ItemList = [
 ]
 
 const quickList = [
-    {
-        text: 'Summer Sessions',
-        link: '#',
-    },
-    {
-        text: 'Events',
-        link: '#',
-    },
+    
     {
         text: 'Gallery',
         link: '#',
     },
     {
         text: 'Forums',
-        link: '#',
+        link: '/contact',
     },
     {
         text: 'Privacy Policy',
-        link: '#',
+        link: '/contact',
     },
     {
         text: 'Terms of Use',
@@ -106,33 +99,33 @@ const quickList = [
 ]
 
 const tweetList = [
-    {
-        iconName: 'icofont-twitter',
-        desc: <p>Aminur islam <a href="#">@ShopCart Greetings!  #HTML_Template</a> Grab your item, 50% Big Sale Offer !!</p>,
-    },
-    {
-        iconName: 'icofont-twitter',
-        desc: <p>Somrat islam <a href="#">@ShopCart Hey! #HTML_Template</a> Grab your item, 50% Big Sale Offer !!</p>,
-    },
+    // {
+    //     iconName: 'icofont-twitter',
+    //     desc: <p>Aminur islam <a href="#">@ShopCart Greetings!  #HTML_Template</a> Grab your item, 50% Big Sale Offer !!</p>,
+    // },
+    // {
+    //     iconName: 'icofont-twitter',
+    //     desc: <p>Somrat islam <a href="#">@ShopCart Hey! #HTML_Template</a> Grab your item, 50% Big Sale Offer !!</p>,
+    // },
 ]
 
 const footerbottomList = [
-    {
-        text: 'Faculty',
-        link: '#',
-    },
-    {
-        text: 'Staff',
-        link: '#',
-    },
-    {
-        text: 'Students',
-        link: '#',
-    },
-    {
-        text: 'Alumni',
-        link: '#',
-    },
+    // {
+    //     text: 'Faculty',
+    //     link: '#',
+    // },
+    // {
+    //     text: 'Staff',
+    //     link: '#',
+    // },
+    // {
+    //     text: 'Students',
+    //     link: '#',
+    // },
+    // {
+    //     text: 'Alumni',
+    //     link: '#',
+    // },
 ]
 
 const Footer = () => {
@@ -146,10 +139,10 @@ const Footer = () => {
                         <div className="footer-inner">
                             <div className="footer-content">
                                 <div className="title">
-                                    <h4>{title}</h4>
+                                    <h4>{Conact}</h4>
                                 </div>
                                 <div className="content">
-                                    <p>{desc}</p>
+                                    {/* <p>{desc}</p> */}
                                     <ul className="lab-ul office-address">
                                         {addressList.map((val, i) => (
                                             <li key={i}><i className={val.iconName}></i>{val.text}</li>
@@ -206,6 +199,21 @@ const Footer = () => {
                 <div className="col">
                     <div className="footer-item twitter-post">
                         <div className="footer-inner">
+                        <div className="footer-content">
+                                <div className="title">
+                                    <h4>{title}</h4>
+                                </div>
+                                <div className="content">
+                                    <p>{desc}</p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {/* <div className="col">
+                    <div className="footer-item twitter-post">
+                        <div className="footer-inner">
                             <div className="footer-content">
                                 <div className="title">
                                     <h4>{tweetTitle}</h4>
@@ -223,21 +231,21 @@ const Footer = () => {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
         </div>
     </div>
-    <div className="footer-bottom text-center">
+    {/* <div className="footer-bottom text-center">
         <div className="container text-center">
             <div className="section-wrapper text-center">
                 <div className="footer-bottom-list text-center">
-                    <Link to={'https://www.linkedin.com/in/rohitrai079/'} target="blank">
-                    <p className="btnt">Made By <span className="name">Rohit Rai🔥</span></p>
+                    <Link to={'http://mahendrapuniya.online/'} target="blank">
+                    <p className="btnt">Made By <span className="name">Mahendra & Team </span></p>
                     </Link>
                 </div>
             </div>
         </div>
-    </div>
+    </div> */}
 </footer>
   )
 }

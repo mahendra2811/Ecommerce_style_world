@@ -1,7 +1,6 @@
-/* eslint-disable react/prop-types */
-const title = "All Categories";
 import Data from "../../utilis/products.json";
 
+const title = "All Categories";
 const ShopCategory = ({ filterItem, setItem, menuItems, setProducts, selectedCategory }) => {
   return (
     <>

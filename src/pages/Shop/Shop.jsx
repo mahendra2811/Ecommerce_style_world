@@ -7,7 +7,9 @@ import ShopCategory from "./ShopCategory";
 import PopularPost from "./PopularPost";
 import Tags from "./Tags";
 import ProductCards from "./ProductCards";
-import Data from "../../../public/products.json"
+// import Data from "../../../public/products.json";
+import Data from "../../utilis/products.json"
+
 
 
 const showResult = "Showing 01 - 12 of 139 Results";

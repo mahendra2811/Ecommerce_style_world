@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const title = (
   <h2>
-    From <span>Jodhpur</span> to Your Doorstep Quality You Can Trust! 
+    From <span>Jodhpur</span> to Your Doorstep <br /> Quality You Can Trust!
   </h2>
 );
 const desc = "Step Into Style – Clothing, Shoes, and Accessories for Everyone!";
@@ -47,28 +47,7 @@ const Banner = () => {
       <div className="container">
         <div className="banner-content">
           {title}
-          <form>
-            <SelectCategory select={"all"} />
-            <input
-              type="text"
-              name="search"
-              placeholder="Search your product"
-              value={searchInput}
-              onChange={handleSearch}
-            />
-            <button type="submit">
-              <i className="icofont-search"></i>
-            </button>
-          </form>
-          <p>{desc}</p>
-          <ul className="lab-ul">
-            {searchInput &&
-              filteredProducts.map((product, i) => (
-                <li key={i}>
-                  <Link to={`/shop/${product.id}`}> {product.name}</Link>
-                </li>
-              ))}
-          </ul>
+          {/* <p>{desc}</p> */}
         </div>
       </div>
     </div>

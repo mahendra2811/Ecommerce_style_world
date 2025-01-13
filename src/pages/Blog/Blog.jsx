@@ -1,13 +1,13 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import PageHeader from '../../components/PageHeader'
+// import { Link } from 'react-router-dom'
+// import PageHeader from '../../components/PageHeader'
 
-import blogList from '../../utilis/blogdata'
+// import blogList from '../../utilis/blogdata'
 
 const Blog = () => {
   return (
     <div>
-                    <PageHeader title={'Our Blog Posts'} curPage={'Blog'} />
+                    {/* <PageHeader title={'Our Blog Posts'} curPage={'Blog'} />
             <div className="blog-section padding-tb section-bg">
                 <div className="container">
                     <div className="section-wrapper">
@@ -47,7 +47,7 @@ const Blog = () => {
                      
                     </div>
                 </div>
-            </div>
+            </div> */}
     </div>
   )
 }

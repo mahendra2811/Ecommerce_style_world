@@ -39,9 +39,8 @@ const Review = () => {
     <>
       {" "}
       <ul
-        className={`review-nav lab-ul ${
-          reviewShow ? "RevActive" : "DescActive"
-        }`}
+        className={`review-nav lab-ul ${reviewShow ? "RevActive" : "DescActive"
+          }`}
       >
         <li onClick={() => setReviewShow(!reviewShow)} className="desc">
           Description
@@ -50,11 +49,10 @@ const Review = () => {
           Reviews 4
         </li>
       </ul>
-      
+
       <div
-        className={`review-content ${
-          reviewShow ? "review-content-show" : "description-show"
-        }`}
+        className={`review-content ${reviewShow ? "review-content-show" : "description-show"
+          }`}
       >
         <div className="review-showing">
           <ul className="content lab-ul">
@@ -85,15 +83,22 @@ const Review = () => {
               </div>
               <form action="action" className="row">
                 <div className="col-md-4 col-12">
-                  <input type="text" name="name" placeholder="Full Name *" />
+                  <input type="text" name="name" placeholder="Full Name *" className="form-control" />
                 </div>
                 <div className="col-md-4 col-12">
-                  <input type="text" name="email" placeholder="Your Email *" />
+                  <input type="text" name="email" placeholder="Your Email *" className="form-control" />
                 </div>
                 <div className="col-md-4 col-12">
-                  <div className="rating">
-                    <span className="rating-title">Your Rating : </span>
-                    <Rating />
+                  <div className="rating f">
+                    {/* <span className="rating-title">Your Rating : </span> */}
+                    <select name="rating" required className="form-control  ">
+                      <option value="">Select Rating</option>
+                      <option value="1">★</option>
+                      <option value="2">★★</option>
+                      <option value="3">★★★</option>
+                      <option value="4">★★★★</option>
+                      <option value="5">★★★★★</option>
+                    </select>
                   </div>
                 </div>
                 <div className="col-md-12 col-12">
@@ -102,6 +107,7 @@ const Review = () => {
                     type="text"
                     name="message"
                     placeholder="Type Here Message"
+                    className="form-control"
                   ></textarea>
                 </div>
                 <div className="col-12">
@@ -113,7 +119,7 @@ const Review = () => {
             </div>
           </div>
         </div>
-        <div className="description">
+        {/* <div className="description">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -151,7 +157,7 @@ const Review = () => {
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
             culpa qui officia deserunt mollit anim id est laborum.
           </p>
-        </div>
+        </div> */}
       </div>
     </>
   );

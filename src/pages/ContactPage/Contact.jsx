@@ -1,6 +1,7 @@
 import React from "react";
 import GoogleMap from "../../components/Sidebar/GoogleMap";
 import PageHeader from "../../components/PageHeader";
+import { useState } from "react";
 
 const subTitle = "Get in touch with us";
 const title = "We're Always Eager To Hear From You!";
@@ -37,6 +38,31 @@ const contactList = [
 ];
 
 const Contact = () => {
+  const [result, setResult] = useState("");
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", "f784be4d-89cc-425b-8469-96038de7833d");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      event.target.reset();
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+    }
+  };
+
   return (
     <div>
       <PageHeader title={"Get In Touch With Us"} curPage={"Contact Us"} />
@@ -77,40 +103,26 @@ const Contact = () => {
             <h2 className="title">{conTitle}</h2>
           </div>
           <div className="section-wrapper">
-            <form className="contact-form">
+            <form className="contact-form" onSubmit={onSubmit}>
+              <input type="hidden" name="from_name" value="style world website" />
               <div className="form-group">
-                <input type="text" name="name" placeholder="Your Name *" />
-              </div>
-              <div className="form-group">
-                <input type="text" name="email" placeholder="Your Email *" />
+                <input type="text" name="name" placeholder="Your Name *" required />
               </div>
               <div className="form-group">
-                <input
-                  type="text"
-                  name="number"
-                  placeholder="Mobile Number *"
-                />
+                <input type="email" name="email" placeholder="Your Email *" required />
               </div>
               <div className="form-group">
-                <input
-                  type="text"
-                  name="subject"
-                  placeholder="Your Subject *"
-                />
+                <input type="text" name="number" placeholder="Mobile Number *" required />
               </div>
-              <div className="form-group w-100">
-                <textarea
-                  rows="8"
-                  type="text"
-                  placeholder="Your Message"
-                ></textarea>
+              <div className="form-group">
+                <textarea name="message" placeholder="Your Message *" required></textarea>
               </div>
-              <div className="form-group w-100 text-center">
-                <button className="lab-btn">
-                  <span>{btnText}</span>
-                </button>
+              <div className="form-group">
+                <button type="submit">{btnText}</button>
               </div>
             </form>
+            <br />
+            <span>{result}</span>
           </div>
         </div>
       </div>

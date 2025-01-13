@@ -65,7 +65,7 @@ const CartPage = () => {
   }, 0);
 
   // Calculate the order total
-  const orderTotal = cartSubtotal;
+  const orderTotal = cartSubtotal+100;
 
 
   return (
@@ -99,7 +99,7 @@ const CartPage = () => {
                           <Link to="/shop-single">{item.name}</Link>
                         </div>
                       </td>
-                      <td className="cat-price">${item.price}</td>
+                      <td className="cat-price">₹{item.price}</td>
                       <td className="cat-quantity">
                         <div className="cart-plus-minus">
                           <div
@@ -123,7 +123,7 @@ const CartPage = () => {
                         </div>
                       </td>
                       <td className="cat-toprice">
-                        ${calculateTotalPrice(item)}
+                      ₹{calculateTotalPrice(item)}
                       </td>
                       <td className="cat-edit">
                         <a href="#" onClick={() => handleRemoveItem(item)}>
@@ -140,6 +140,8 @@ const CartPage = () => {
             <div className="cart-bottom">
               {/* checkout box */}
               <div className="cart-checkout-box">
+
+
                 <form className="coupon" action="/">
                   <input
                     type="text"
@@ -149,12 +151,12 @@ const CartPage = () => {
                   />
                   <input type="submit" value="Apply Coupon" />
                 </form>
+
+                
                 <form className="cart-checkout" action="/">
-                  <input type="submit" value="Update Cart" />
+                  {/* <input type="submit" value="Update Cart" /> */}
                   {/* <Link to="/check-out"><input type="submit" value="Proceed to Checkout" /></Link> */}
-                  <div>
-                    <CheckoutPage />
-                  </div>
+                 
                 </form>
               </div>
 
@@ -162,16 +164,16 @@ const CartPage = () => {
               <div className="shiping-box">
                 <div className="row">
                   {/* shipping  */}
-                  <div className="col-md-6 col-12">
+                  {/* <div className="col-md-6 col-12">
                     <div className="calculate-shiping">
                       <h3>Calculate Shipping</h3>
                       <div className="outline-select">
                         <select>
-                          <option value="volvo">United Kingdom (UK)</option>
-                          <option value="saab">Bangladesh</option>
-                          <option value="saab">Pakisthan</option>
-                          <option value="saab">India</option>
-                          <option value="saab">Nepal</option>
+                          <option value="volvo">Rajasthan</option>
+                          <option value="saab">Other-State</option>
+                          <option value="saab">Haryana</option>
+                          <option value="saab">Punjab</option>
+                          <option value="saab">Delhi</option>
                         </select>
                         <span className="select-icon">
                           <i className="icofont-rounded-down"></i>
@@ -180,7 +182,7 @@ const CartPage = () => {
                       <div className="outline-select shipping-select">
                         <select>
                           <option value="volvo">State/Country</option>
-                          <option value="saab">Dhaka</option>
+                          <option value="saab">Jodhpur</option>
                           <option value="saab">Benkok</option>
                           <option value="saab">Kolkata</option>
                           <option value="saab">Kapasia</option>
@@ -189,6 +191,7 @@ const CartPage = () => {
                           <i className="icofont-rounded-down"></i>
                         </span>
                       </div>
+
                       <input
                         type="text"
                         name="coupon"
@@ -197,7 +200,7 @@ const CartPage = () => {
                       />
                       <button type="submit">Update Total</button>
                     </div>
-                  </div>
+                  </div> */}
 
                   {/* cart total */}
                   <div className="col-md-6 col-12">
@@ -206,21 +209,24 @@ const CartPage = () => {
                       <ul className="lab-ul">
                         <li>
                           <span className="pull-left">Cart Subtotal</span>
-                          <p className="pull-right">$ {cartSubtotal}</p>
+                          <p className="pull-right">₹{cartSubtotal}</p>
                         </li>
                         <li>
                           <span className="pull-left">
                             Shipping and Handling
                           </span>
-                          <p className="pull-right">Free Shipping</p>
+                          <p className="pull-right">₹100</p>
                         </li>
                         <li>
                           <span className="pull-left">Order Total</span>
                           <p className="pull-right">
-                            $ {orderTotal.toFixed(2)}
+                          ₹{orderTotal.toFixed(2)}
                           </p>
                         </li>
                       </ul>
+                      <div>
+                    <CheckoutPage />
+                  </div>
                     </div>
                   </div>
                 </div>

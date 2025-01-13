@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/images/logo/logo.png";
 import { AuthContext } from "../contexts/AuthProvider";
 import { NavDropdown } from "react-bootstrap";
+import { auto } from "@popperjs/core";
 
 const NavItems = () => {
   const [menuToggle, setMenuToggle] = useState(false);
@@ -57,9 +58,9 @@ const NavItems = () => {
           <div className="header-wrapper">
             {/* logo  */}
             <div className="logo-search-acte">
-              <div className="logo">
+              <div className="logo"  >
                 <Link to="/">
-                  <img src={logo} alt="logo" width={'80px'}/>
+                  <img src={logo} alt="logo" width={'50px'}  />
                 </Link>
               </div>
             </div>
@@ -72,7 +73,7 @@ const NavItems = () => {
                     <Link to="/">Home</Link>
                   </li>
                   <li>
-                    <Link to="shop">Shop</Link>
+                    <Link to="/shop">Shop</Link>
                   </li>
                   {/* <li>
                     <Link to="/blog">Blog</Link>

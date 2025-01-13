@@ -64,6 +64,7 @@ const SingleProduct = () => {
                               </SwiperSlide>
                             ))}
                           </Swiper>
+
                           <div className="pro-single-next">
                             <i className="icofont-rounded-left"></i>
                           </div>
@@ -90,12 +91,12 @@ const SingleProduct = () => {
                 </div>
               </article>
             </div>
-            <div className="col-lg-4 col-md-7 col-12">
+            {/* <div className="col-lg-4 col-md-7 col-12">
               <aside className="ps-lg-4">
-                {/* <MostPopularPost /> */}
-                {/* <Tags /> */}
+                <MostPopularPost />
+                <Tags />
               </aside>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

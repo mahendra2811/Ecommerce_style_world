@@ -1,47 +1,47 @@
 /* eslint-disable react/jsx-no-target-blank */
-import React, { useEffect, useState } from "react";
-import Tags from "../Shop/Tags";
-import PageHeader from "../../components/PageHeader";
-import { useParams } from "react-router-dom";
-import blogList from "../../utilis/blogdata";
-import MostPopularPost from "../../components/Sidebar/MostPopularPost";
-const socialList = [
-  {
-    link: "#",
-    iconName: "icofont-facebook",
-    className: "facebook",
-  },
-  {
-    link: "#",
-    iconName: "icofont-twitter",
-    className: "twitter",
-  },
-  {
-    link: "#",
-    iconName: "icofont-linkedin",
-    className: "linkedin",
-  },
-  {
-    link: "#",
-    iconName: "icofont-instagram",
-    className: "instagram",
-  },
-  {
-    link: "#",
-    iconName: "icofont-pinterest",
-    className: "pinterest",
-  },
-];
+// import React, { useEffect, useState } from "react";
+// import Tags from "../Shop/Tags";
+// import PageHeader from "../../components/PageHeader";
+// import { useParams } from "react-router-dom";
+// import blogList from "../../utilis/blogdata";
+// import MostPopularPost from "../../components/Sidebar/MostPopularPost";
+// const socialList = [
+//   {
+//     link: "#",
+//     iconName: "icofont-facebook",
+//     className: "facebook",
+//   },
+//   {
+//     link: "#",
+//     iconName: "icofont-twitter",
+//     className: "twitter",
+//   },
+//   {
+//     link: "#",
+//     iconName: "icofont-linkedin",
+//     className: "linkedin",
+//   },
+//   {
+//     link: "#",
+//     iconName: "icofont-instagram",
+//     className: "instagram",
+//   },
+//   {
+//     link: "#",
+//     iconName: "icofont-pinterest",
+//     className: "pinterest",
+//   },
+// ];
 
 const SingleBlog = () => {
-  const [blog, setBlog] = useState(blogList);
-  const { id } = useParams();
-  console.log(Number(id));
-  const result = blog.filter((p) => p.id === Number(id));
-  console.log(result[0]);
+  // const [blog, setBlog] = useState(blogList);
+  // const { id } = useParams();
+  // console.log(Number(id));
+  // const result = blog.filter((p) => p.id === Number(id));
+  // console.log(result[0]);
   return (
     <div>
-      <PageHeader
+      {/* <PageHeader
         title={"Single Blog Pages"}
         curPage={"Blog / Blog Details"}
       />
@@ -252,7 +252,7 @@ const SingleBlog = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

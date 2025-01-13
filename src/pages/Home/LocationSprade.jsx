@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const title = (
   <h2 className="title">
-    More Then <span className="yellow-color">4,00,000</span> Customers
+    More Then <span className="yellow-color">1,00,000</span> Customers
   </h2>
 );
 const desc =

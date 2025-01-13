@@ -11,6 +11,7 @@ const ProductCards = ({ products, GridList }) => {
         GridList ? "grid" : "list"
       }`}
     >
+
       {products.map((product, i) => (
         <div className="col-lg-4 col-md-6 col-12" key={i}>
           <div className="product-item">
@@ -22,9 +23,9 @@ const ProductCards = ({ products, GridList }) => {
                 <Link to={`/shop/${product.id}`}>
                   <i className="icofont-eye"></i>
                 </Link>
-                <a href="#">
+                {/* <a href="#">
                   <i className="icofont-heart"></i>
-                </a>
+                </a> */}
                 <Link to="/cart-page">
                   <i className="icofont-cart-alt"></i>
                 </Link>
@@ -37,7 +38,7 @@ const ProductCards = ({ products, GridList }) => {
               <p className="productRating">
                 <Rating />
               </p>
-              <h6>${product.price}</h6>
+              <h6>₹{product.price}</h6>
             </div>
           </div>
           <div className="product-list-item">
@@ -49,9 +50,9 @@ const ProductCards = ({ products, GridList }) => {
                 <a href="#">
                   <i className="icofont-eye"></i>
                 </a>
-                <a href="#">
+                {/* <a href="#">
                   <i className="icofont-heart"></i>
-                </a>
+                </a> */}
                 <a href="#">
                   <i className="icofont-cart-alt"></i>
                 </a>

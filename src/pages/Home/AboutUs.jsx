@@ -10,7 +10,7 @@ const btnText = "Contact Us";
 const countList = [
     {
         iconName: 'icofont-users-alt-4',
-        count: '934344',
+        count: '98344',
         text: 'Happy Customers',
     },
     {

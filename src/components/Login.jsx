@@ -133,26 +133,26 @@ const Login = () => {
               {/* social icons */}
               <h5 className="subtitle">{socialTitle}</h5>
               <ul className="lab-ul social-icons justify-content-center">
-                <li>
+                {/* <li>
                   <button onClick={handleRegister} className="github">
                     <i className="icofont-github"></i>
                   </button>
-                </li>
+                </li> */}
                 <li>
                   <a href="/" className="facebook">
                     <i className="icofont-facebook"></i>
                   </a>
                 </li>
-                <li>
+                {/* <li>
                   <a href="/" className="twitter">
                     <i className="icofont-twitter"></i>
                   </a>
-                </li>
-                <li>
+                </li> */}
+                {/* <li>
                   <a href="/" className="linkedin">
                     <i className="icofont-linkedin"></i>
                   </a>
-                </li>
+                </li> */}
                 <li>
                   <a href="/" className="instagram">
                     <i className="icofont-instagram"></i>
