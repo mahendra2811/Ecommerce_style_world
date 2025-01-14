@@ -96,7 +96,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      <div className="contact-section padding-tb">
+      {/* <div className="contact-section padding-tb">
         <div className="container">
           <div className="section-header text-center">
             <span className="subtitle">{conSubTitle}</span>
@@ -125,7 +125,7 @@ const Contact = () => {
             <span>{result}</span>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

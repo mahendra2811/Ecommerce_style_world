@@ -11,10 +11,10 @@ import "swiper/css";
 
 
 import { Autoplay } from "swiper/modules";
-import Review from "../../components/Review";
-import MostPopularPost from "../../components/Sidebar/MostPopularPost";
+// import Review from "../../components/Review";
+// import MostPopularPost from "../../components/Sidebar/MostPopularPost";
 import ProductDisplay from "./ProductDisplay";
-const reviwtitle = "Add a Review";
+// const reviwtitle = "Add a Review";
 
 const SingleProduct = () => {
   const [product, setProduct] = useState([]);
@@ -86,9 +86,9 @@ const SingleProduct = () => {
                   </div>
                 </div>
                 
-                <div className="review">
+                {/* <div className="review">
                   <Review />
-                </div>
+                </div> */}
               </article>
             </div>
             {/* <div className="col-lg-4 col-md-7 col-12">

@@ -78,7 +78,7 @@ const ProductDisplay = ({ item }) => {
           <i className="icofont-star"></i>
           <i className="icofont-star"></i>
           <i className="icofont-star"></i>
-          (3 review)
+          {/* (3 review) */}
         </p>
         <h4>₹{price}</h4>
         <h6>{seller}</h6>

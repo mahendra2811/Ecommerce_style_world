@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/images/logo/logo.png";
-import { AuthContext } from "../contexts/AuthProvider";
+// import { AuthContext } from "../contexts/AuthProvider";
 import { NavDropdown } from "react-bootstrap";
 import { auto } from "@popperjs/core";
 
@@ -12,17 +12,17 @@ const NavItems = () => {
   const [profileDropdownOpen, setProfileDropdownOpen] = useState(false); // State to manage profile dropdown
 
   // check if user is registered
-  const { user, logOut } = useContext(AuthContext);
+  // const { user, logOut } = useContext(AuthContext);
 
-  const handleLogout = () => {
-    logOut()
-      .then(() => {
-        // Sign-out successful.
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
+  // const handleLogout = () => {
+  //   logOut()
+  //     .then(() => {
+  //       // Sign-out successful.
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // };
 
   window.addEventListener("scroll", () => {
     if (window.scrollY > 200) {
@@ -39,7 +39,7 @@ const NavItems = () => {
       }`}
     >
       {/* ------ header top: first div ----- */}
-      <div className={`header-top d-md-none ${socialToggle ? "open" : ""}`}>
+      {/* <div className={`header-top d-md-none ${socialToggle ? "open" : ""}`}>
         <div className="container">
           <div className="header-top-area">
             <Link to="/signup" className="lab-btn me-3">
@@ -48,7 +48,7 @@ const NavItems = () => {
             <Link to="/login">Log In</Link>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* header top ends*/}
 
@@ -75,9 +75,6 @@ const NavItems = () => {
                   <li>
                     <Link to="/shop">Shop</Link>
                   </li>
-                  {/* <li>
-                    <Link to="/blog">Blog</Link>
-                  </li> */}
                   <li>
                     {" "}
                     <NavLink to="/about">About</NavLink>
@@ -87,60 +84,6 @@ const NavItems = () => {
                   </li>
                 </ul>
               </div>
-
-              {/* users when user available */}
-              {user ? (
-                <>
-                  <div>
-                    {user?.photoURL ? (
-                      <>
-                        <img
-                          src={user?.photoURL}
-                          className="nav-profile"
-                          onClick={() => setProfileDropdownOpen(!profileDropdownOpen)} // Toggle profile dropdown
-                        />
-                      </>
-                    ) : (
-                      <img
-                        src="/src/assets/images/author/01.jpg"
-                        className="nav-profile"
-                        onClick={() => setProfileDropdownOpen(!profileDropdownOpen)} // Toggle profile dropdown
-                      />
-                    )}
-                  </div>
-                  <NavDropdown
-                    id="basic-nav-dropdown"
-                    show={profileDropdownOpen} // Show profile dropdown based on state
-                    onHide={() => setProfileDropdownOpen(false)} // Close dropdown when clicking outside
-                  >
-                    <NavDropdown.Item href="#action/3.1" onClick={handleLogout}>
-                      Logout
-                    </NavDropdown.Item>
-                    <NavDropdown.Item href="/cart-page">
-                      Shopping Cart
-                    </NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.3">
-                      Profile
-                    </NavDropdown.Item>
-                    <NavDropdown.Divider />
-                    <NavDropdown.Item href="/cart-page">Order</NavDropdown.Item>
-                  </NavDropdown>
-                </>
-              ) : (
-                <>
-                  <Link
-                    to="/sign-up"
-                    className="lab-btn me-3 d-none d-md-block"
-                  >
-                    <span>Create Account</span>
-                  </Link>
-                  <Link to="/login" className="d-none d-md-block">
-                    Log In
-                  </Link>
-                </>
-              )}
-
-              {/* menu toggle btn */}
               <div
                 className={`header-bar d-lg-none ${menuToggle ? "active" : ""}`}
                 onClick={() => setMenuToggle(!menuToggle)}

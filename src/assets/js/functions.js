@@ -461,14 +461,14 @@
         });
         
         //Review Tabs
-        $('ul.review-nav').on('click', 'li', function (e) {
-            e.preventDefault();
-            var reviewContent = $('.review-content');
-            var viewRev = $(this).data('target');
-            $('ul.review-nav li').removeClass('active');
-            $(this).addClass('active');
-            reviewContent.removeClass('review-content-show description-show').addClass(viewRev);
-        });
+        // $('ul.review-nav').on('click', 'li', function (e) {
+        //     e.preventDefault();
+        //     var reviewContent = $('.review-content');
+        //     var viewRev = $(this).data('target');
+        //     $('ul.review-nav li').removeClass('active');
+        //     $(this).addClass('active');
+        //     reviewContent.removeClass('review-content-show description-show').addClass(viewRev);
+        // });
             
        
     });
