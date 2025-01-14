@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/images/logo/logo.png";
 import { useDispatch } from "react-redux";
@@ -21,6 +21,9 @@ const NavItems = () => {
       console.error(err);
     }
   };
+  useEffect(() => {
+    handleProduct();
+  }, []);
 
   window.addEventListener("scroll", () => {
     if (window.scrollY > 200) {
@@ -59,9 +62,7 @@ const NavItems = () => {
                     <Link to="/">Home</Link>
                   </li>
                   <li>
-                    <Link to="/shop" onClick={handleProduct}>
-                      Shop
-                    </Link>
+                    <Link to="/shop">Shop</Link>
                   </li>
                   <li>
                     {" "}

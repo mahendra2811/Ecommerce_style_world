@@ -22,11 +22,7 @@ import About from "./pages/AboutPage/About.jsx";
 import Contact from "./pages/ContactPage/Contact.jsx";
 import CartPage from "./pages/Shop/CartPage.jsx";
 import CheckoutPage from "./pages/Shop/CheckoutPage.jsx";
-// import Signup from "./components/Signup.jsx";
-// import Login from "./components/Login.jsx";
 import ErrorPage from "./components/ErrorPage.jsx";
-// import PrivateRoute from "./PrivateRoute/PrivateRoute.jsx";
-// import AuthProvider from "./contexts/AuthProvider.jsx";
 import appStore from "./configRedux/appStore.js";
 
 const router = createBrowserRouter([
@@ -61,14 +57,6 @@ const router = createBrowserRouter([
       },
     ],
   },
-  // {
-  //   path: "/sign-up",
-  //   element: <Signup />,
-  // },
-  // {
-  //   path: "/login",
-  //   element: <Login />,
-  // },
   {
     path: "/check-out",
     element: <CheckoutPage />,
@@ -76,9 +64,7 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  // <AuthProvider>
   <Provider store={appStore}>
     <RouterProvider router={router} />
   </Provider>
-  // </AuthProvider>
 );

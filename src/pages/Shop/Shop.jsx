@@ -3,23 +3,29 @@ import PageHeader from "../../components/PageHeader";
 import Pagination from "./Pagination";
 import ProductCards from "./ProductCards";
 import Data from "../../utilis/products.json";
+import { useSelector } from "react-redux";
 
 const showResult = "Showing 01 - 12 of 139 Results";
+
 const Shop = () => {
+  const datafromredux = useSelector((store) => store.product);
+  const products = datafromredux.data.data;
+  console.log(datafromredux.data.data);
+  console.log(Data);
   const [GridList, setGridList] = useState(true);
-  const [products, setProducts] = useState(Data);
+  // const [products, setProducts] = useState(Data);
 
   // pagination
   // Get current products to display
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 12; // Number of products per page
 
-  // const indexOfLastProduct = currentPage * productsPerPage;
-  // const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-  // const currentProducts = products.slice(
-  //   indexOfFirstProduct,
-  //   indexOfLastProduct
-  // );
+  const indexOfLastProduct = currentPage * productsPerPage;
+  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+  const currentProducts = products.slice(
+    indexOfFirstProduct,
+    indexOfLastProduct
+  );
 
   // Function to change the current page
   const paginate = (pageNumber) => {
@@ -53,7 +59,7 @@ const Shop = () => {
                 </div>
                 <div>
                   <ProductCards
-                    // products={currentProducts}
+                    products={currentProducts}
                     GridList={GridList}
                   />
                 </div>

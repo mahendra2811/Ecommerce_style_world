@@ -13,13 +13,15 @@ const ProductDisplay = ({ item }) => {
   const [color, setColor] = useState("Select Color");
 
   const handleDecrease = () => {
-    if (prequantity > 1) {
+    if (prequantity >= 1) {
       setQuantity(prequantity - 1);
     }
   };
 
   const handleIncrease = () => {
-    setQuantity(prequantity + 1);
+    if (prequantity < stock) {
+      setQuantity(prequantity + 1);
+    }
   };
 
   const handleSizeChange = (e) => {
@@ -32,38 +34,6 @@ const ProductDisplay = ({ item }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Create an object representing the product to be added to the cart
-    const product = {
-      id: id,
-      imageUrl: imageUrl,
-      name: name,
-      price: price,
-      stock: prequantity,
-      size: size,
-      color: color,
-      coupon: coupon,
-    };
-
-    // Retrieve existing cart items from local storage or initialize an empty array
-    // const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
-
-    // Check if the product with the same ID is already in the cart
-    // const existingProductIndex = existingCart.findIndex(
-    //   (item) => item.id === id
-    // );
-
-    // if (existingProductIndex !== -1) {
-    //   // Product already in the cart; update quantity
-    //   existingCart[existingProductIndex].quantity += prequantity;
-    // } else {
-    //   // Product not in the cart; add it
-    //   existingCart.push(product);
-    // }
-
-    // Update the local storage with the updated cart items
-    // localStorage.setItem("cart", JSON.stringify(existingCart));
-
     // Reset form fields and quantity
     setQuantity(1);
     setSize("Select Size");
@@ -72,6 +42,7 @@ const ProductDisplay = ({ item }) => {
 
     // You can add further logic, such as displaying a confirmation message.
   };
+
   if (!item) return <div>loading...</div>;
 
   if (item)
