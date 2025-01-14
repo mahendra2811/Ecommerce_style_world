@@ -87,8 +87,8 @@ const CartPage = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {cartItems.map((item, indx) => (
-                    <tr key={indx}>
+                  {cartItems.map((item, index) => (
+                    <tr key={index}>
                       <td className="product-item cat-product">
                         <div className="p-thumb">
                           <Link to="/shop-single">

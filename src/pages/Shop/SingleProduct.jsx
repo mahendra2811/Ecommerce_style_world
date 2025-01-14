@@ -11,19 +11,15 @@ const SingleProduct = () => {
 
   const { id } = useParams();
 
-  useEffect(async () => {
-    // fetch(BASE_URL + `/byId/${id}`)
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     setProduct(data);
-    //     console.log(data);
-    //   });
-    const res = await axios.get(BASE_URL + `/byId/${id}`);
-    setProduct(res);
-    console.log(res);
-  }, []);
+  useEffect(() => {
+    async function fetchData() {
+      const res = await axios.get(BASE_URL + `/byId/${id}`);
+      setProduct(res.data);
+      console.log(res.data);
+    }
+    fetchData();
+  }, [id]);
 
-  const result = product;
   return (
     <div>
       <PageHeader title={"OUR SHOP SINGLE"} curPage={"Shop / Single Product"} />
@@ -37,30 +33,9 @@ const SingleProduct = () => {
                     <div className="col-md-6 col-12">
                       <div className="product-thumb">
                         <div className="swiper-container pro-single-top">
-                          {/* <img src={imageUrl} alt="" /> */}
-                          {/* <Swiper
-                            spaceBetween={30}
-                            slidesPerView={1}
-                            loop={"true"}
-                            autoplay={{
-                              delay: 2000,
-                              disableOnInteraction: false,
-                            }}
-                            modules={[Autoplay]}
-                            navigation={{
-                              prevEl: ".pro-single-prev",
-                              nextEl: ".pro-single-next",
-                            }}
-                          >
-                            {result.map((item, i) => (
-                              <SwiperSlide key={i}>
-                                <div className="single-thumb">
-                                  <img src={item.img} alt="" />
-                                </div>
-                              </SwiperSlide>
-                            ))}
-                          </Swiper> */}
-
+                          <div className="single-thumb">
+                            <img src={product.imageUrl} alt="" />
+                          </div>
                           <div className="pro-single-next">
                             <i className="icofont-rounded-left"></i>
                           </div>
@@ -73,10 +48,7 @@ const SingleProduct = () => {
                     <div className="col-md-6 col-12">
                       <div className="post-content">
                         <div>
-                          {/* {result.map((item) => (
-                            <ProductDisplay item={item} key={item.id} />
-                          ))} */}
-                          <ProductDisplay item={product.data} />
+                          <ProductDisplay item={product} />
                         </div>
                       </div>
                     </div>

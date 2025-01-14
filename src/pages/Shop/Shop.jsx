@@ -14,12 +14,12 @@ const Shop = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 12; // Number of products per page
 
-  const indexOfLastProduct = currentPage * productsPerPage;
-  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-  const currentProducts = products.slice(
-    indexOfFirstProduct,
-    indexOfLastProduct
-  );
+  // const indexOfLastProduct = currentPage * productsPerPage;
+  // const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+  // const currentProducts = products.slice(
+  //   indexOfFirstProduct,
+  //   indexOfLastProduct
+  // );
 
   // Function to change the current page
   const paginate = (pageNumber) => {
@@ -53,7 +53,7 @@ const Shop = () => {
                 </div>
                 <div>
                   <ProductCards
-                    products={currentProducts}
+                    // products={currentProducts}
                     GridList={GridList}
                   />
                 </div>

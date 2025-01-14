@@ -5,22 +5,22 @@ const desc =
   "Energistia an deliver atactica metrcs after avsionary Apropria trnsition enterpris an sources applications emerging 	psd template.";
 
 const ProductDisplay = ({ item }) => {
-  const { imageUrl, price, name, stock } = item;
-  // const [prequantity, setQuantity] = useState(quantity);
+  const { id, imageUrl, price, name, stock } = item;
+  const [prequantity, setQuantity] = useState(stock);
   console.log(item);
   const [coupon, setCoupon] = useState("");
   const [size, setSize] = useState("Select Size");
   const [color, setColor] = useState("Select Color");
 
-  // const handleDecrease = () => {
-  //   if (prequantity > 1) {
-  //     setQuantity(prequantity - 1);
-  //   }
-  // };
+  const handleDecrease = () => {
+    if (prequantity > 1) {
+      setQuantity(prequantity - 1);
+    }
+  };
 
-  // const handleIncrease = () => {
-  //   setQuantity(prequantity + 1);
-  // };
+  const handleIncrease = () => {
+    setQuantity(prequantity + 1);
+  };
 
   const handleSizeChange = (e) => {
     setSize(e.target.value);
@@ -35,11 +35,11 @@ const ProductDisplay = ({ item }) => {
 
     // Create an object representing the product to be added to the cart
     const product = {
-      // id: id,
-      img: imageUrl,
+      id: id,
+      imageUrl: imageUrl,
       name: name,
       price: price,
-      // quantity: prequantity,
+      stock: prequantity,
       size: size,
       color: color,
       coupon: coupon,
@@ -65,7 +65,7 @@ const ProductDisplay = ({ item }) => {
     // localStorage.setItem("cart", JSON.stringify(existingCart));
 
     // Reset form fields and quantity
-    // setQuantity(1);
+    setQuantity(1);
     setSize("Select Size");
     setColor("Select Color");
     setCoupon("");
@@ -83,10 +83,11 @@ const ProductDisplay = ({ item }) => {
             <i className="icofont-star"></i>
             <i className="icofont-star"></i>
             <i className="icofont-star"></i>
-            (3 review)
+            <i className="icofont-star"></i>
+            (4 review)
           </p>
           <h4>₹{price}</h4>
-          <h6>{seller}</h6>
+          <h6>{stock}</h6>
           <p>{desc}</p>
         </div>
         {/* Single Product Cart Component here */}
@@ -140,7 +141,6 @@ const ProductDisplay = ({ item }) => {
             <button type="submit" className="lab-btn">
               <span>Add To Cart</span>
             </button>
-
             <Link to="/cart-page" className="lab-btn bg-primary">
               <span>Check Out</span>
             </Link>
