@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 const title = "Error 404!";
 const desc = (
   <>
-    Oops! The Page You Are Looking For Could Not Be Found. Please Check url again OR contact us at{" "}
-    <a href="mailto:mahendrapuniya92@gmail.com">mahendrapuniya92@gmail.com</a> or visit to our{" "}
+    Oops! The Page You Are Looking For Could Not Be Found. Please Check url
+    again OR contact us at{" "}
+    <a href="mailto:mahendrapuniya92@gmail.com">mahendrapuniya92@gmail.com</a>{" "}
+    or visit to our{" "}
     <a href="mahendrapuniya.online">website (www.MahendraPuniya.online) </a>.
   </>
 );

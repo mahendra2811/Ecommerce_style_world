@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 
-const PageHeader = ({ title, curPage }) => {
+const PageHeader = ({ title }) => {
   return (
     <div className="pageheader-section">
       <div className="container">

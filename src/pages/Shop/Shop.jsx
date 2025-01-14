@@ -1,24 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import PageHeader from "../../components/PageHeader";
-import { Component, Fragment, useState } from "react";
-import Search from "./Search";
 import Pagination from "./Pagination";
-import ShopCategory from "./ShopCategory";
-import PopularPost from "./PopularPost";
-import Tags from "./Tags";
 import ProductCards from "./ProductCards";
-// import Data from "../../../public/products.json";
-import Data from "../../utilis/products.json"
-
-
+import Data from "../../utilis/products.json";
 
 const showResult = "Showing 01 - 12 of 139 Results";
 const Shop = () => {
   const [GridList, setGridList] = useState(true);
   const [products, setProducts] = useState(Data);
-
-  //   category active colors
-const [selectedCategory, setSelectedCategory] = useState("All");
 
   // pagination
   // Get current products to display
@@ -35,18 +24,6 @@ const [selectedCategory, setSelectedCategory] = useState("All");
   // Function to change the current page
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
-  };
-
-  // category based filtering
-  const menuItems = [...new Set(Data.map((Val) => Val.category))];
-
-  const filterItem = (curcat) => {
-    const newItem = Data.filter((newVal) => {
-      return newVal.category === curcat;
-    });
-    setSelectedCategory(curcat); 
-    setProducts(newItem);
-    // console.log(selectedCategory)
   };
 
   return (
@@ -87,21 +64,6 @@ const [selectedCategory, setSelectedCategory] = useState("All");
                   activePage={currentPage}
                 />
               </article>
-            </div>
-            <div className="col-lg-4 col-12">
-              <aside>
-                <Search products={products} GridList={GridList} />
-                {/* <ShopCategory /> */}
-                <ShopCategory
-                  filterItem={filterItem}
-                  setItem={setProducts}
-                  menuItems={menuItems}
-                  setProducts={setProducts}
-                  selectedCategory={selectedCategory }
-                />
-                {/* <PopularPost/> */}
-                {/* <Tags /> */}
-              </aside>
             </div>
           </div>
         </div>
