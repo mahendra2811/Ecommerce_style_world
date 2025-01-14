@@ -2,18 +2,15 @@ import React, { useState } from "react";
 import PageHeader from "../../components/PageHeader";
 import Pagination from "./Pagination";
 import ProductCards from "./ProductCards";
-import Data from "../../utilis/products.json";
 import { useSelector } from "react-redux";
 
-const showResult = "Showing 01 - 12 of 139 Results";
+const showResult = "Showing 01 - 12 of 20 Results";
 
 const Shop = () => {
   const datafromredux = useSelector((store) => store.product);
   const products = datafromredux.data.data;
   console.log(datafromredux.data.data);
-  console.log(Data);
   const [GridList, setGridList] = useState(true);
-  // const [products, setProducts] = useState(Data);
 
   // pagination
   // Get current products to display
