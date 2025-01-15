@@ -104,18 +104,41 @@ const Contact = () => {
           </div>
           <div className="section-wrapper">
             <form className="contact-form" onSubmit={onSubmit}>
-              <input type="hidden" name="from_name" value="style world website" />
+              <input
+                type="hidden"
+                name="from_name"
+                value="style world website"
+              />
               <div className="form-group">
-                <input type="text" name="name" placeholder="Your Name *" required />
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your Name *"
+                  required
+                />
               </div>
               <div className="form-group">
-                <input type="email" name="email" placeholder="Your Email *" required />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Your Email *"
+                  required
+                />
               </div>
               <div className="form-group">
-                <input type="text" name="number" placeholder="Mobile Number *" required />
+                <input
+                  type="text"
+                  name="number"
+                  placeholder="Mobile Number *"
+                  required
+                />
               </div>
               <div className="form-group">
-                <textarea name="message" placeholder="Your Message *" required></textarea>
+                <textarea
+                  name="message"
+                  placeholder="Your Message *"
+                  required
+                ></textarea>
               </div>
               <div className="form-group">
                 <button type="submit">{btnText}</button>

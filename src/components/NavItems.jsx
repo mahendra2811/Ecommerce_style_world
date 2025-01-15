@@ -1,28 +1,29 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/images/logo/logo.png";
-import { AuthContext } from "../contexts/AuthProvider";
-import { NavDropdown } from "react-bootstrap";
-import { auto } from "@popperjs/core";
+import { useDispatch } from "react-redux";
+import { setProductData } from "../configRedux/productSlice";
+import axios from "axios";
+import { BASE_URL } from "../utilis/constant";
 
 const NavItems = () => {
   const [menuToggle, setMenuToggle] = useState(false);
   const [socialToggle, setSocialToggle] = useState(false);
   const [headerFixed, setHeaderFixed] = useState(false);
-  const [profileDropdownOpen, setProfileDropdownOpen] = useState(false); // State to manage profile dropdown
 
-  // check if user is registered
-  const { user, logOut } = useContext(AuthContext);
+  const dispatch = useDispatch();
 
-  const handleLogout = () => {
-    logOut()
-      .then(() => {
-        // Sign-out successful.
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+  const handleProduct = async () => {
+    try {
+      const res = await axios.get(BASE_URL + "/all");
+      dispatch(setProductData(res));
+    } catch (err) {
+      console.error(err);
+    }
   };
+  useEffect(() => {
+    handleProduct();
+  }, []);
 
   window.addEventListener("scroll", () => {
     if (window.scrollY > 200) {
@@ -38,18 +39,6 @@ const NavItems = () => {
         headerFixed ? "header-fixed fadeInUp" : ""
       }`}
     >
-      {/* ------ header top: first div ----- */}
-      <div className={`header-top d-md-none ${socialToggle ? "open" : ""}`}>
-        <div className="container">
-          <div className="header-top-area">
-            <Link to="/signup" className="lab-btn me-3">
-              <span>Create Account</span>
-            </Link>
-            <Link to="/login">Log In</Link>
-          </div>
-        </div>
-      </div>
-
       {/* header top ends*/}
 
       {/* ---header bottom starts */}
@@ -58,9 +47,9 @@ const NavItems = () => {
           <div className="header-wrapper">
             {/* logo  */}
             <div className="logo-search-acte">
-              <div className="logo"  >
+              <div className="logo">
                 <Link to="/">
-                  <img src={logo} alt="logo" width={'50px'}  />
+                  <img src={logo} alt="logo" width={"50px"} />
                 </Link>
               </div>
             </div>
@@ -75,9 +64,6 @@ const NavItems = () => {
                   <li>
                     <Link to="/shop">Shop</Link>
                   </li>
-                  {/* <li>
-                    <Link to="/blog">Blog</Link>
-                  </li> */}
                   <li>
                     {" "}
                     <NavLink to="/about">About</NavLink>
@@ -87,58 +73,6 @@ const NavItems = () => {
                   </li>
                 </ul>
               </div>
-
-              {/* users when user available */}
-              {user ? (
-                <>
-                  <div>
-                    {user?.photoURL ? (
-                      <>
-                        <img
-                          src={user?.photoURL}
-                          className="nav-profile"
-                          onClick={() => setProfileDropdownOpen(!profileDropdownOpen)} // Toggle profile dropdown
-                        />
-                      </>
-                    ) : (
-                      <img
-                        src="/src/assets/images/author/01.jpg"
-                        className="nav-profile"
-                        onClick={() => setProfileDropdownOpen(!profileDropdownOpen)} // Toggle profile dropdown
-                      />
-                    )}
-                  </div>
-                  <NavDropdown
-                    id="basic-nav-dropdown"
-                    show={profileDropdownOpen} // Show profile dropdown based on state
-                    onHide={() => setProfileDropdownOpen(false)} // Close dropdown when clicking outside
-                  >
-                    <NavDropdown.Item href="#action/3.1" onClick={handleLogout}>
-                      Logout
-                    </NavDropdown.Item>
-                    <NavDropdown.Item href="/cart-page">
-                      Shopping Cart
-                    </NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.3">
-                      Profile
-                    </NavDropdown.Item>
-                    <NavDropdown.Divider />
-                    <NavDropdown.Item href="/cart-page">Order</NavDropdown.Item>
-                  </NavDropdown>
-                </>
-              ) : (
-                <>
-                  <Link
-                    to="/sign-up"
-                    className="lab-btn me-3 d-none d-md-block"
-                  >
-                    <span>Create Account</span>
-                  </Link>
-                  <Link to="/login" className="d-none d-md-block">
-                    Log In
-                  </Link>
-                </>
-              )}
 
               {/* menu toggle btn */}
               <div

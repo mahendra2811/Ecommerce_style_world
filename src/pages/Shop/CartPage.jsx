@@ -10,6 +10,7 @@ const CartPage = () => {
   useEffect(() => {
     // Fetch cart items from local storage
     const storedCartItems = JSON.parse(localStorage.getItem("cart")) || [];
+    console.log(storedCartItems);
     setCartItems(storedCartItems);
   }, []);
 
@@ -38,7 +39,7 @@ const CartPage = () => {
       // If quantity is already 1, don't decrease further
       item.quantity = 1;
       setCartItems([...cartItems]);
-      
+
       // Update local storage with the new cart items
       localStorage.setItem("cart", JSON.stringify(cartItems));
     }
@@ -65,8 +66,7 @@ const CartPage = () => {
   }, 0);
 
   // Calculate the order total
-  const orderTotal = cartSubtotal+100;
-
+  const orderTotal = cartSubtotal + 100;
 
   return (
     <div>
@@ -87,8 +87,8 @@ const CartPage = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {cartItems.map((item, indx) => (
-                    <tr key={indx}>
+                  {cartItems.map((item, index) => (
+                    <tr key={index}>
                       <td className="product-item cat-product">
                         <div className="p-thumb">
                           <Link to="/shop-single">
@@ -123,12 +123,12 @@ const CartPage = () => {
                         </div>
                       </td>
                       <td className="cat-toprice">
-                      ₹{calculateTotalPrice(item)}
+                        ₹{calculateTotalPrice(item)}
                       </td>
                       <td className="cat-edit">
-                        <a href="#" onClick={() => handleRemoveItem(item)}>
+                        <button onClick={() => handleRemoveItem(item)}>
                           <img src={delImgUrl} alt="" />
-                        </a>
+                        </button>
                       </td>
                     </tr>
                   ))}
@@ -140,8 +140,6 @@ const CartPage = () => {
             <div className="cart-bottom">
               {/* checkout box */}
               <div className="cart-checkout-box">
-
-
                 <form className="coupon" action="/">
                   <input
                     type="text"
@@ -152,11 +150,9 @@ const CartPage = () => {
                   <input type="submit" value="Apply Coupon" />
                 </form>
 
-                
                 <form className="cart-checkout" action="/">
                   {/* <input type="submit" value="Update Cart" /> */}
                   {/* <Link to="/check-out"><input type="submit" value="Proceed to Checkout" /></Link> */}
-                 
                 </form>
               </div>
 
@@ -219,14 +215,12 @@ const CartPage = () => {
                         </li>
                         <li>
                           <span className="pull-left">Order Total</span>
-                          <p className="pull-right">
-                          ₹{orderTotal.toFixed(2)}
-                          </p>
+                          <p className="pull-right">₹{orderTotal.toFixed(2)}</p>
                         </li>
                       </ul>
                       <div>
-                    <CheckoutPage />
-                  </div>
+                        <CheckoutPage />
+                      </div>
                     </div>
                   </div>
                 </div>

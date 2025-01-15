@@ -22,10 +22,10 @@ const CheckoutPage = () => {
   const from = location.state?.from?.pathname || "/";
 
   const handleOrderConfirm = () => {
-      alert("Your order placed successfully!")
-      localStorage.removeItem("cart");
-      navigate(from, { replace: true });
-  }
+    alert("Your order placed successfully!");
+    localStorage.removeItem("cart");
+    navigate(from, { replace: true });
+  };
 
   return (
     <div className="modalCard">
@@ -140,7 +140,10 @@ const CheckoutPage = () => {
                           </div>
                         </div>
                         <div className="px-5 pay">
-                          <button className="btn btn-success btn-block" onClick={handleOrderConfirm}>
+                          <button
+                            className="btn btn-success btn-block"
+                            onClick={handleOrderConfirm}
+                          >
                             Add card
                           </button>
                         </div>
@@ -207,7 +210,10 @@ const CheckoutPage = () => {
                           </div>
                         </div>
                         <div className="pay px-5">
-                          <button className="btn btn-primary btn-block" onClick={handleOrderConfirm}>
+                          <button
+                            className="btn btn-primary btn-block"
+                            onClick={handleOrderConfirm}
+                          >
                             Add paypal
                           </button>
                         </div>
@@ -218,7 +224,8 @@ const CheckoutPage = () => {
               </div>
               {/* payment desclaimer */}
               <p className="mt-3 px-4 p-Disclaimer">
-              <em>Payment Disclaimer:</em> In no event shall payment or partial payment by Owner for any material or service
+                <em>Payment Disclaimer:</em> In no event shall payment or
+                partial payment by Owner for any material or service
               </p>
             </div>
           </div>
