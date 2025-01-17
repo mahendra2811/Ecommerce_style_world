@@ -24,6 +24,9 @@ import CartPage from "./pages/Shop/CartPage.jsx";
 import CheckoutPage from "./pages/Shop/CheckoutPage.jsx";
 import ErrorPage from "./components/ErrorPage.jsx";
 import appStore from "./configRedux/appStore.js";
+import AdminLogin from "./admin/pages/AdminLoginPage.jsx";
+import AdminApp from "./admin/AdminApp.jsx";
+import ProtectedRoute from "./admin/components/ProtectedRoute.jsx";
 
 const router = createBrowserRouter([
   {
@@ -60,8 +63,19 @@ const router = createBrowserRouter([
   {
     path: "/check-out",
     element: <CheckoutPage />,
-  }, 
-  
+  },
+  {
+    path: "/adminlogin",
+    element: <AdminLogin />,
+  },
+  {
+    path: "/auth",
+    element: (
+      <ProtectedRoute>
+        <AdminApp />
+      </ProtectedRoute>
+    ),
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

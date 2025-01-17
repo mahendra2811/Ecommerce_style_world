@@ -84,6 +84,10 @@ const quickList = [
     text: "Terms of Use",
     link: "#",
   },
+  {
+    text: "Admin",
+    link: "/adminlogin",
+  },
 ];
 
 const Footer = () => {

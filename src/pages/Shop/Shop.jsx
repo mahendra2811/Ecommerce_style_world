@@ -8,8 +8,8 @@ const showResult = "Showing 01 - 12 of 20 Results";
 
 const Shop = () => {
   const datafromredux = useSelector((store) => store.product);
-  const products = datafromredux.data.data;
-  console.log(datafromredux.data.data);
+  const products = datafromredux.data;
+  console.log(products);
   const [GridList, setGridList] = useState(true);
 
   // pagination

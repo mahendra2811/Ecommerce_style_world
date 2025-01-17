@@ -2,11 +2,12 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const ProductCards = ({ GridList }) => {
-  const product = useSelector((store) => store.product);
+  const product = useSelector((store) => store.product.data);
 
-  if (!product || !product.data || product.data.length === 0) {
+  if (!product || product === 0) {
     return <div>Loading...</div>;
   }
+  console.log(product);
 
   return (
     <div
@@ -14,7 +15,7 @@ const ProductCards = ({ GridList }) => {
         GridList ? "grid" : "list"
       }`}
     >
-      {product.data.data.map((item, i) => (
+      {product.map((item, i) => (
         <div className="col-lg-4 col-md-6 col-12" key={i}>
           <div className="product-item">
             <div className="product-thumb">
