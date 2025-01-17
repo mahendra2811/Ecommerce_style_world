@@ -13,7 +13,7 @@ const SingleProduct = () => {
 
   useEffect(() => {
     async function fetchData() {
-      const res = await axios.get(BASE_URL + `/byId/${id}`);
+      const res = await axios.get(BASE_URL + `/products/byId/${id}`);
       setProduct(res.data);
       console.log(res.data);
     }

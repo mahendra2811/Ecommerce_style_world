@@ -28,9 +28,7 @@ function OrderTable() {
   // Function to update the order status
   const updateStatus = (id, status) => {
     setOrders(
-      orders.map((order) =>
-        order.id === id ? { ...order, status } : order
-      )
+      orders.map((order) => (order.id === id ? { ...order, status } : order))
     );
   };
 

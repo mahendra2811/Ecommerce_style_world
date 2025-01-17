@@ -1,18 +1,32 @@
-// AdminApp.jsx
-import React from "react";
-import AdminHeader from "./components/AdminHeader";
+import React, { useState } from "react";
 import AdminSidebar from "./components/AdminSidebar";
-import { Outlet } from "react-router-dom";
+import AdminHeader from "./components/AdminHeader";
+import Dashboard from "./pages/Dashboard";
+import Products from "./pages/Products";
+import Orders from "./pages/Orders";
 
 function AdminApp() {
+  const [currentView, setCurrentView] = useState("dashboard");
+
+  const renderView = () => {
+    switch (currentView) {
+      case "dashboard":
+        return <Dashboard />;
+      case "products":
+        return <Products />;
+      case "orders":
+        return <Orders />;
+      default:
+        return <Dashboard />;
+    }
+  };
+
   return (
     <div className="d-flex">
-      <AdminSidebar />
+      <AdminSidebar onNavigate={setCurrentView} />
       <div className="flex-grow-1">
         <AdminHeader />
-        <div className="p-4">
-          <Outlet /> {/* Renders child routes like Dashboard, ProductTable, etc. */}
-        </div>
+        <div className="p-4">{renderView()}</div>
       </div>
     </div>
   );

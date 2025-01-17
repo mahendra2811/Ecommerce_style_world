@@ -15,8 +15,9 @@ const NavItems = () => {
 
   const handleProduct = async () => {
     try {
-      const res = await axios.get(BASE_URL + "/all");
-      dispatch(setProductData(res));
+      const res = await axios.get(BASE_URL + "/products/all");
+      dispatch(setProductData(res.data));
+      console.log(res.data);
     } catch (err) {
       console.error(err);
     }
