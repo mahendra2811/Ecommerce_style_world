@@ -35,49 +35,115 @@ const AdminLogin = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-100">
-      <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
-        <h1 className="text-2xl font-bold text-center mb-6">Admin Login</h1>
-        <form onSubmit={handleLogin}>
-          <div className="mb-4">
-            <label
-              className="block text-sm font-medium text-gray-700"
-              htmlFor="userId"
-            >
-              User ID
-            </label>
-            <input
-              type="text"
-              id="userId"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              value={userId}
-              onChange={(e) => setUserId(e.target.value)}
-              required
-            />
+    <div style={{
+      margin: "0 auto",
+      width: "100%",
+      maxWidth: "1140px",
+      minHeight: "100vh",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      flexDirection: "column",
+      // backgroundColor: "#eaeff4",
+      fontFamily: "Arial, Helvetica, sans-serif",
+      fontSize: "16px",
+      fontWeight: "400",
+      color: "#666666"
+    }}>
+      <div style={{
+        position: "relative",
+        width: "100%",
+        maxWidth: "600px",
+        height: "auto",
+        display: "flex",
+        backgroundColor: "#ffffff",
+        boxShadow: "0 0 5px #999999"
+      }}>
+        <div style={{
+          padding: "30px",
+          display: "flex",
+          width: "60%",
+          clipPath: "polygon(0 0, 0% 100%, 100% 0)",
+          backgroundColor: "#f16126",
+          color: "#ffffff"
+        }}>
+          <div style={{ width: "100%" }}>
+            <h2 style={{ margin: "0 0 15px 0", fontSize: "30px", fontWeight: "700" }}>Admin - Pannel</h2>
+            <p style={{ margin: "0 0 20px 0", fontSize: "16px", fontWeight: "500", lineHeight: "22px" }}>Style-world</p>
           </div>
-          <div className="mb-4">
-            <label
-              className="block text-sm font-medium text-gray-700"
-              htmlFor="password"
-            >
-              Password
-            </label>
-            <input
-              type="password"
-              id="password"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
+        </div>
+        <div style={{
+          padding: "60px 30px",
+          width: "50%",
+          marginLeft: "-10%"
+        }}>
+          <div style={{ width: "100%" }}>
+            <h2 style={{ margin: "0 0 15px 0", fontSize: "22px", fontWeight: "700" }}>Login</h2>
+            <form onSubmit={handleLogin}>
+              <p style={{ margin: "0 0 10px 0", textAlign: "left", color: "#666666", fontSize: "15px" }}>
+                <label style={{ display: "block", width: "100%", marginBottom: "2px", letterSpacing: ".5px" }}>Username<span style={{ color: "#ff574e", paddingLeft: "2px" }}>*</span></label>
+                <input
+                  type="text"
+                  placeholder="Username or Email"
+                  value={userId}
+                  onChange={(e) => setUserId(e.target.value)}
+                  required
+                  style={{
+                    display: "block",
+                    width: "100%",
+                    height: "35px",
+                    padding: "0 10px",
+                    outline: "none",
+                    border: "1px solid #cccccc",
+                    borderRadius: "30px",
+                    marginBottom: "10px"
+                  }}
+                />
+              </p>
+              <p style={{ margin: "0 0 10px 0", textAlign: "left", color: "#666666", fontSize: "15px" }}>
+                <label style={{ display: "block", width: "100%", marginBottom: "2px", letterSpacing: ".5px" }}>Password<span style={{ color: "#ff574e", paddingLeft: "2px" }}>*</span></label>
+                <input
+                  type="password"
+                  placeholder="Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                  style={{
+                    display: "block",
+                    width: "100%",
+                    height: "35px",
+                    padding: "0 10px",
+                    outline: "none",
+                    border: "1px solid #cccccc",
+                    borderRadius: "30px",
+                    marginBottom: "10px"
+                  }}
+                />
+              </p>
+              <p style={{ margin: "0 0 10px 0", textAlign: "left", color: "#666666", fontSize: "15px" }}>
+                <input
+                  type="submit"
+                  value="Sign In"
+                  style={{
+                    display: "inline-block",
+                    width: "100%",
+                    marginTop: "5px",
+                    color: "#f16126",
+                    fontSize: "16px",
+                    letterSpacing: "1px",
+                    cursor: "pointer",
+                    background: "transparent",
+                    border: "1px solid #f16126",
+                    borderRadius: "30px",
+                    boxShadow: "inset 0 0 0 0 #f16126",
+                    transition: ".3s",
+                    WebkitTransition: ".3s"
+                  }}
+                />
+              </p>
+            </form>
           </div>
-          <button
-            type="submit"
-            className="w-full text-black bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
-            Login
-          </button>
-        </form>
+        </div>
       </div>
     </div>
   );

@@ -49,7 +49,6 @@
 // }
 
 // export default ProductTable;
-
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { BASE_URL } from "../../utilis/constant"; // Import your base URL for the API
@@ -90,29 +89,29 @@ function ProductTable() {
   if (products.length === 0 || !products) return <div>loading...</div>;
 
   return (
-    <div className="container mt-4">
-      <h3>Products</h3>
-      <table className="table table-striped">
+    <div style={{ overflowX: "auto" }}>
+      <h3>Products List</h3>
+      <table style={{ width: "100%", borderCollapse: "collapse" }}>
         <thead>
           <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Stock</th>
-            <th>Actions</th>
+            <th style={{ border: "1px solid #ddd", padding: "8px" }}>ID</th>
+            <th style={{ border: "1px solid #ddd", padding: "8px" }}>Name</th>
+            <th style={{ border: "1px solid #ddd", padding: "8px" }}>Price</th>
+            <th style={{ border: "1px solid #ddd", padding: "8px" }}>Stock</th>
+            <th style={{ border: "1px solid #ddd", padding: "8px" }}>Actions</th>
           </tr>
         </thead>
         <tbody>
           {products.map((product) => (
             <tr key={product.id}>
-              <td>{product.id}</td>
-              <td>{product.name}</td>
-              <td>${product.price}</td>
-              <td>{product.stock}</td>
-              <td>
-                <button className="btn btn-warning btn-sm mr-2">Edit</button>
+              <td style={{ border: "1px solid #ddd", padding: "8px" }}>{product.id}</td>
+              <td style={{ border: "1px solid #ddd", padding: "8px" }}>{product.name}</td>
+              <td style={{ border: "1px solid #ddd", padding: "8px" }}>${product.price}</td>
+              <td style={{ border: "1px solid #ddd", padding: "8px" }}>{product.stock}</td>
+              <td style={{ border: "1px solid #ddd", padding: "8px" }}>
+                <button style={{ backgroundColor: "#ffc107", color: "white", padding: "5px 10px", borderRadius: "5px", marginRight: "5px" }}>Edit</button>
                 <button
-                  className="btn btn-danger btn-sm"
+                  style={{ backgroundColor: "#dc3545", color: "white", padding: "5px 10px", borderRadius: "5px" }}
                   onClick={() => deleteProduct(product.id)} // Call deleteProduct with product ID
                 >
                   Delete

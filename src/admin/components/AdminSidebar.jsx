@@ -42,26 +42,11 @@ function AdminSidebar({ onNavigate }) {
   };
 
   return (
-    <div
-      className="sidebar"
-      style={{ display: "flex", flexDirection: "column" }}
-    >
-      <button onClick={() => onNavigate("dashboard")}>Dashboard</button>
-      <button
-        onClick={() => {
-          onNavigate("products");
-          handleProduct();
-        }}
-      >
-        Products
-      </button>
-      <button onClick={() => onNavigate("orders")}>Orders</button>
-      <button
-        onClick={handleLogout}
-        style={{ backgroundColor: "red", font: "black" }}
-      >
-        Logout
-      </button>
+    <div style={{ display: "flex", flexDirection: "column", gap: "10px", padding: "20px", backgroundColor: "#f8f9fa", boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)" }}>
+      <button style={{ padding: "10px", backgroundColor: "#f16126", color: "white", borderRadius: "5px" }} onClick={() => onNavigate("dashboard")}>Dashboard</button>
+      <button style={{ padding: "10px", backgroundColor: "#f16126", color: "white", borderRadius: "5px" }} onClick={() => { onNavigate("products"); handleProduct(); }}>Products</button>
+      <button style={{ padding: "10px", backgroundColor: "#f16126", color: "white", borderRadius: "5px" }} onClick={() => onNavigate("orders")}>Orders</button>
+      <button style={{ padding: "10px", backgroundColor: "red", color: "white", borderRadius: "5px" }} onClick={handleLogout}>Logout</button>
     </div>
   );
 }
