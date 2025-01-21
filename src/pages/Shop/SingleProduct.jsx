@@ -34,7 +34,7 @@ const SingleProduct = () => {
                       <div className="product-thumb">
                         <div className="swiper-container pro-single-top">
                           <div className="single-thumb">
-                            <img src={product.imageUrl} alt="" />
+                            <img src={BASE_URL + product.imageUrl} alt="" />
                           </div>
                           <div className="pro-single-next">
                             <i className="icofont-rounded-left"></i>

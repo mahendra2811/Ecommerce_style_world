@@ -15,7 +15,7 @@ const Shop = () => {
   // pagination
   // Get current products to display
   const [currentPage, setCurrentPage] = useState(1);
-  const productsPerPage = 12; // Number of products per page
+  const productsPerPage = 16; // Number of products per page
 
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;

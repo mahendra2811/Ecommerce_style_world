@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { BASE_URL } from "../../utilis/constant";
 
 const ProductCards = ({ GridList }) => {
   const product = useSelector((store) => store.product.data);
@@ -20,7 +21,7 @@ const ProductCards = ({ GridList }) => {
           <div className="product-item">
             <div className="product-thumb">
               <div className="pro-thumb">
-                <img src={item.imageUrl} alt={item.name} />
+                <img src={BASE_URL + item.imageUrl} alt={item.name} />
               </div>
               <div className="product-action-link">
                 <Link to={`/shop/${item.id}`}>
@@ -41,7 +42,7 @@ const ProductCards = ({ GridList }) => {
           <div className="product-list-item">
             <div className="product-thumb">
               <div className="pro-thumb">
-                <img src={item.imageUrl} alt={item.name} />
+                <img src={BASE_URL + item.imageUrl} alt={item.name} />
               </div>
               <div className="product-action-link">
                 <button>
