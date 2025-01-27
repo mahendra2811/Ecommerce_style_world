@@ -6,22 +6,33 @@ import axios from "axios";
 
 function ProductTable() {
   const datafromredux = useSelector((store) => store.product.data);
+<<<<<<< Updated upstream
   console.log(datafromredux);
   const [products, setProducts] = useState(datafromredux || []);
   const dispatch = useDispatch();
 
   // Synchronize local state on initial load
+=======
+  const [products, setProducts] = useState(datafromredux || []);
+  const dispatch = useDispatch();
+
+>>>>>>> Stashed changes
   useEffect(() => {
     setProducts(datafromredux);
   }, [datafromredux]);
 
   const deleteProduct = async (id) => {
     try {
+<<<<<<< Updated upstream
       const response = await axios.get(BASE_URL + `/products/delete/${id}`, {
+=======
+      const response = await axios.get(`${BASE_URL}/products/delete/${id}`, {
+>>>>>>> Stashed changes
         withCredentials: true,
       });
 
       if (response.status === 200) {
+<<<<<<< Updated upstream
         // On success, remove the product from the local state
         const updatedProducts = products.filter((product) => product.id !== id);
         setProducts(updatedProducts);
@@ -29,6 +40,18 @@ function ProductTable() {
         dispatch(setProductData(updatedProducts));
       } else {
         console.error("Error deleting product:", response.message);
+=======
+        // Filter out the deleted product from the local state
+        const updatedProducts = products.filter((product) => product.id !== id);
+
+        // Update local state
+        setProducts(updatedProducts);
+
+        // Update Redux store
+        dispatch(setProductData(updatedProducts));
+      } else {
+        console.error("Error deleting product:", response.data.message);
+>>>>>>> Stashed changes
         alert("Failed to delete product!");
       }
     } catch (error) {
@@ -88,7 +111,11 @@ function ProductTable() {
                     padding: "5px 10px",
                     borderRadius: "5px",
                   }}
+<<<<<<< Updated upstream
                   onClick={() => deleteProduct(product.id)} // Call deleteProduct with product ID
+=======
+                  onClick={() => deleteProduct(product.id)}
+>>>>>>> Stashed changes
                 >
                   Delete
                 </button>
